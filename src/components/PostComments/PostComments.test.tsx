@@ -1,14 +1,19 @@
 import { render, screen } from '@testing-library/react';
-import PostComment from '.';
+import PostComment from '../Post/index';
 
 describe('Teste para o componente PostComment', () => {
-  it('Deve renderizar o comentário "Bem legal"', () => {
-    render(<PostComment />);
-    expect(screen.getByText("Bem legal")).toBeInTheDocument();
+  test('Deve renderizar o comentário: Bem legal', () => {
+    render(<PostComment children={undefined} imageUrl={''} />);
+
+    const bemLegalCommentElement = screen.getByText('Bem legal');
+    expect(bemLegalCommentElement).toBeInTheDocument();
   });
 
-  it('Deve renderizar o comentário "O veiculo ficou muito top"', () => {
-    render(<PostComment />);
-    expect(screen.getByText("O veiculo ficou muito top")).toBeInTheDocument();
+  test('Deve renderizar o comentário: O veiculo ficou muito top', () => {
+    render(<PostComment children={undefined} imageUrl={''} />);
+
+    const ficouTopCommentElement = screen.getByText('O veiculo ficou muito top');
+    expect(ficouTopCommentElement).toBeInTheDocument();
   });
 });
+
